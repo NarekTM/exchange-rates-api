@@ -1,0 +1,23 @@
+name: 'exchange-rates-api'
+services:
+  postgres:
+    image: postgres:17.2
+    container_name: postgres
+    environment:
+      POSTGRES_DB: exchange-rates_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+    ports:
+      - "5432:5432"
+  currency-api:
+    build: .
+    container_name: currency_api
+    restart: always
+    ports:
+      - "8080:8080"
+    depends_on:
+      - postgres
+    environment:
+      SPRING.PROFILES.ACTIVE: local
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/exchange-rates_db
+      EXCHANGE_RATES_EXTERNAL_API_KEY: ${EXCHANGE_RATES_EXTERNAL_API_KEY}

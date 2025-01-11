@@ -1,0 +1,5 @@
+exchange:
+  rates:
+    external-api:
+      base-uri: https://api.apilayer.com/exchangerates_data
+      latest-rates-uri: /latest

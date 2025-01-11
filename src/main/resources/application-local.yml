@@ -1,0 +1,8 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/exchange-rates_db
+    username: postgres
+    password: password
+
+scheduling:
+  enabled: false

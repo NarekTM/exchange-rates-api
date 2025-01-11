@@ -1,0 +1,10 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: NarekTM
+      comment: Create currency table
+      changes:
+        - sqlFile:
+            encoding: UTF-8
+            path: migrations/V20241222.initial.01-create-currency-table.sql
+            relativeToChangelogFile: true

@@ -1,0 +1,19 @@
+spring:
+  datasource:
+    url: ${SPRING_DATASOURCE_URL}
+    username: ${SPRING_DATASOURCE_USERNAME}
+    password: ${SPRING_DATASOURCE_PASSWORD}
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    open-in-view: false
+  liquibase:
+    enabled: true
+    change-log: classpath:db/changelog/db.changelog-master.yaml
+
+exchange:
+  rates:
+    external-api:
+      key: ${EXCHANGE_RATES_EXTERNAL_API_KEY}
+      base-uri: https://api.apilayer.com/exchangerates_data
+      latest-rates-uri: /latest
