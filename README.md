@@ -74,21 +74,12 @@ To run the application locally without Docker Compose:
 1. Ensure PostgreSQL is installed and running on your system or there is a running container.
 
 2. Create a PostgreSQL database with the following credentials:
-    - **Database Name**: `exchange-rates_db`
-    - **Username**: `user`
+    - **Database Name**: `exchange_rates_db`
+    - **Username**: `postgres`
     - **Password**: `password`
 
 3. Update the `application-local.yml` file in the `src/main/resources` directory if necessary to reflect your PostgreSQL
-   setup and provide the `exchange.rates.external-api.key` value:
-
-    ```yaml
-    exchange:
-      rates:
-        external-api:
-          key: your-api-key
-    ```
-
-   Replace `your-api-key` with the actual API key for accessing the external exchange rates API.
+   setup.
 
 4. Run the following commands in the project root directory:
 
@@ -98,7 +89,7 @@ java -jar build/libs/<your-application-jar>.jar
 ```
 
 Replace `<your-application-jar>` with the name of the generated JAR file, e.g.,
-`currency-exchange-api-0.0.1-SNAPSHOT.jar`.
+`exchange-rates-api-0.0.1-SNAPSHOT.jar`.
 
 The application will be accessible at [http://localhost:8080](http://localhost:8080).
 
